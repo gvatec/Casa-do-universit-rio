@@ -1,0 +1,76 @@
+.container-cadastro {
+    width: 100%;
+    display: flex;
+}
+
+.container-form {
+    background-color: #1D4A9C;
+    width: 70%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-cadastro {
+    width: 500px;
+    height: 360px;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.form-cadastro input {
+    width: 80%;
+    background-color: rgb(225, 225, 225);
+    border-radius: 10px;
+    height: 40px;
+    padding-left: 5px;
+    outline: none;
+}
+
+.box-input-cadastro {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.box-input-cadastro input {
+    width: 100%;
+    background-color: rgb(225, 225, 225);
+    border-radius: 10px;
+    height: 40px;
+    padding-left: 5px;
+    outline: none;
+}
+
+#btnsubmit {
+    width: 80%;
+    height: 40px;
+    background-color: #1D4A9C;
+    color: #fff;
+}
+
+.ilustracao-cad {
+    width: 30%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.ilustracao-cad h2 {
+    text-align: center;
+    text-shadow: 3px 3px 10px #000;
+}
+
+.ilustracao-cad img {
+    width: 400px;
+}

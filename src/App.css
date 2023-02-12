@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600;800;900&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+button {
+  border: 0;
+}
+
+*::-webkit-scrollbar {
+  background: transparent;
+ width: 0;
+  /* color of the tracking area */
+}
