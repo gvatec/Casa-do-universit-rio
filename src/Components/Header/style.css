@@ -71,6 +71,66 @@
     background-color: transparent;
 }
 
+
+.menu-mobile {
+    width: 90%;
+    min-height: 100vh;
+    background-color: #fff;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: fixed;
+    padding: 10px;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0 0 50px 10px #000;
+}
+
+.menu-mobile h3 {
+    width: 100%;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.btn-area-mobile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    gap: 10px;
+}
+
+.btn-area-mobile button {
+    width: 90%;
+    height: 55px;
+    background-color: #1d4a9c;
+    color: #fff;
+    font-size: 18px;
+
+}
+
+.btn-area-mobile a {
+    text-decoration: none;
+    width: 90%;
+    height: 55px;
+    color: #1d4a9c;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#close-btn-mobile {
+    background-color: transparent;
+    margin: 20px;
+    width: min-content;
+    font-size: 18px;
+}
+
 @media(max-width:500px) {
     .titlebolsa h2 {
         font-size: 13px;

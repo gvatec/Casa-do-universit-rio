@@ -11,8 +11,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
-
+.btn-back{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
 .form-cadastro {
     width: 500px;
     height: 360px;
@@ -74,4 +79,18 @@
 
 .ilustracao-cad img {
     width: 400px;
+}
+
+
+
+@media(max-width:500px){
+    .ilustracao-cad{
+        display: none;
+    }
+    .container-form{
+        width: 100%;
+    }
+    .form-cadastro{
+        width: 90%;
+    }
 }
