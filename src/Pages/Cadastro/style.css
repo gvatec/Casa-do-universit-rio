@@ -68,7 +68,8 @@
 
 .ilustracao-cad h2 {
     text-align: center;
-    text-shadow: 3px 3px 10px #000;
+    font-weight: 800;
+    font-size: 40px;
 }
 
 .ilustracao-cad img {

@@ -24,8 +24,8 @@ export default function Header() {
 
                 <div className="user-nav">
                     <FiUser size={20} color="#fff"></FiUser>
-                    <a href="/cadastro">Entrar</a>
-                    <a>Cadastre-se</a>
+                    <a href="/login">Entrar</a>
+                    <a href="/cadastro">Cadastre-se</a>
                 </div>
             </nav>
         </header>
