@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './style.css'
 import logo from '../../assets/logo.png'
 import { FiUser, FiMenu } from 'react-icons/fi'
 
 export default function Header() {
+
+    const [user, setUser] = useState({})
+    const [menu, setMenu] = useState(false)
+
+    useEffect(() => {
+        setUser(JSON.parse(localStorage.getItem('sessionCasaUniversitarioLogin')))
+
+    }, [])
+
+
+
     return (
         <header className="header">
             <div className="titlebolsa">
@@ -24,8 +35,8 @@ export default function Header() {
                     <button id="close-btn-mobile" onClick={() => document.querySelector('.menu-mobile').setAttribute('style', 'display:none')}>X</button>
                     <h3>✌️Olá casadouniversitário@gmail.com</h3>
                     <div className="btn-area-mobile">
-                    <a href="/login">Entrar</a>
-                    <a href="/cadastro">Cadastre-se</a>
+                        <a href="/login">Entrar</a>
+                        <a href="/cadastro">Cadastre-se</a>
                         <button>Faculdades</button>
                         <button>Cursos</button>
                         <button>Profissões</button>
@@ -33,12 +44,20 @@ export default function Header() {
                     </div>
                 </nav> : ''}
 
-                <div className="user-nav">
+                {!user ? <div className="user-nav">
                     <FiUser size={20} color="#fff"></FiUser>
                     <a href="/login">Entrar</a>
                     <a href="/cadastro">Cadastre-se</a>
-                </div>
+                </div> :
+                    <div className="profile-box">
+                        <div onClick={() => setMenu(menu === false ? true : false)} className="profile-user"><FiUser color='#fff'></FiUser></div>
+                        <span title={user.name}>✌️Olá {String(user.name).slice(0, 10)}...</span>
+                    </div>}
             </nav>
+            {menu != false ? <div className="menu-profile">
+                <h3 title={user.name}>✌️Olá {String(user.name).slice(0, 10)}...</h3>
+                <a href="">Editar Perfil</a>
+            </div> : ''}
         </header>
     )
 }

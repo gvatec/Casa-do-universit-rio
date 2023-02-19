@@ -16,9 +16,20 @@ export default function Login() {
             email: email,
             password: password
         })
-            .then(() => {
+            .then((data) => {
                 document.getElementById('errorORsucsses').setAttribute('style', 'color:green')
                 document.getElementById('errorORsucsses').innerText = 'Login efetuado com sucesso!'
+
+                let dateUser = {
+                    id: data.data.iduser,
+                    name: data.data.name,
+                    email: data.data.email,
+                    telefone: data.data.telefone,
+                    datanascimento: data.data.datanascimento,
+                }
+
+                //console.log(data.data.name)
+                localStorage.setItem('sessionCasaUniversitarioLogin', JSON.stringify(dateUser))
 
                 setTimeout(() => {
                     window.location.href = '/'
