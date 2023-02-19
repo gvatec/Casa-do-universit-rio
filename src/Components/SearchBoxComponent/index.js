@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import './style.css'
+import { GoMortarBoard } from 'react-icons/go'
+import { MdWork } from 'react-icons/md'
+import { FaPencilRuler,FaTools } from 'react-icons/fa'
 
 const SearchBoxComponent = () => {
 
@@ -12,9 +15,10 @@ const SearchBoxComponent = () => {
     </div>*/}
             <div className="box-pai-search">
                 <div className="btns-tipo-graduacao">
-                    <button>Graduação</button>
-                    <button>Pós Graduação</button>
-                    <button>Cursos livres</button>
+                    <button><GoMortarBoard color='#fff'></GoMortarBoard>Graduação</button>
+                    <button><MdWork color="#fff"></MdWork>Pós-Graduação</button>
+                    <button><FaPencilRuler color="#fff"></FaPencilRuler>Cursos livres</button>
+                    <button><FaTools color="#fff"></FaTools>Cursos Técnicos</button>
                 </div>
 
                 <div className="box-inputs-escolha">
@@ -31,7 +35,6 @@ const SearchBoxComponent = () => {
                             <option>Minas Gerais</option>
                             <option>Santa Catarina</option>
                             <option>Rio Grande do Sul</option>
-
                         </select>
                     </div>
                     <div className="label-box-escolha">

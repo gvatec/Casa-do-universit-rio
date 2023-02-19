@@ -10,6 +10,7 @@ import inst5 from '../../assets/esta.png'
 import inst6 from '../../assets/uno.png'
 import SearchBoxComponent from "../../Components/SearchBoxComponent";
 import CarrosselBannersComponent from "../../Components/CarrosselBannersComponent";
+import { BsWhatsapp } from "react-icons/bs";
 
 export default function Home() {
 
@@ -17,13 +18,20 @@ export default function Home() {
         <div className="container-home">
             <Header></Header>
             <section className="section1">
-                <CarrosselBannersComponent timer={4000}></CarrosselBannersComponent>
+                <CarrosselBannersComponent></CarrosselBannersComponent>
                 <SearchBoxComponent></SearchBoxComponent>
             </section>
 
-            <section className="section3">
-               
+            <section className="section2">
+                <div className="bolsasInteressantes">
+                    <h2>Bolsas interessantes para você</h2>
+                    <div>
+                        aqui vai as bolsas
+                    </div>
+                </div>
             </section>
+
+
             <section className="section4">
                 <div className="title">
                     <h2>Intituições Parceiras</h2>
@@ -40,7 +48,7 @@ export default function Home() {
             </section>
 
             <section className="section5">
-            <div className="title">
+                <div className="title">
                     <h2>Novidades Casa do Universitário</h2>
                 </div>
                 <div className="container-novidades">
@@ -51,11 +59,8 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-
+            <button id="btnwhats"><BsWhatsapp size={40} color='#fff'></BsWhatsapp></button>
             <Footer></Footer>
-
-
-
         </div>
     )
 }

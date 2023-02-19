@@ -41,6 +41,10 @@
     height: 100%;
     transition: 0.3s ease;
     color: white;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    justify-content: center;
 }
 
 .btns-tipo-graduacao button:hover {

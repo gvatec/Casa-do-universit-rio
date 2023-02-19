@@ -14,9 +14,17 @@
 
 .section2 {
     width: 100%;
-    height: auto;
-    margin-bottom: 5rem;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
 
+.bolsasInteressantes {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .title {
@@ -123,6 +131,17 @@
     margin-top: 50px;
 }
 
+#btnwhats {
+    position: fixed;
+    background-color: #1EDD56;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 30px;
+    bottom: 30px;
+}
 
 @media(max-width:500px) {
     .section1 {

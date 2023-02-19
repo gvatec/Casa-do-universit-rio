@@ -63,7 +63,7 @@ export default function Login() {
                     </form>
                 </div>
                 <div className="ilustracao-cad">
-                    <h2>BOLSAS DE ESTUDO COM ATÉ 80% DE DESCONTO!😎</h2>
+                    <h2>BOLSAS DE ESTUDO COM ATÉ 85% DE DESCONTO!😎</h2>
                     <img src={ilustracao} alt='ilustração'></img>
                 </div>
             </div>
