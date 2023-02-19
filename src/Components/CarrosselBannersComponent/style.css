@@ -1,0 +1,19 @@
+.containerCarrossel {
+    width: 100%;
+    height: 100vh;
+}
+
+.banneritem {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    overflow-x: hidden;
+    scroll-snap-stop: always;
+}
+
+.banner {
+    width: 100%;
+    object-fit: cover;
+    transition: transform 1s ease;
+}

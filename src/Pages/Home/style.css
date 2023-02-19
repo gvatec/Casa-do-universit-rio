@@ -6,21 +6,11 @@
 .section1 {
     width: 100%;
     height: 100vh;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.banner {
-    width: 100%;
-    height: 700px;
-
-}
-
-.banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-}
 
 .section2 {
     width: 100%;
@@ -72,7 +62,7 @@
 }
 
 .container-novidades {
-    width: 100%;
+    width: 60%;
     height: auto;
     display: flex;
     justify-content: center;
@@ -130,121 +120,9 @@
 .section5 {
     width: 100%;
     height: 500px;
-    background-color: #4345cf;
-    display: flex;
+    margin-top: 50px;
 }
 
-.container-search-cursos {
-    width: 70%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 50px;
-    justify-content: center;
-}
-
-
-.ilustracao-container-search {
-    width: 30%;
-    height: 100%;
-    background-image: url('../../assets/ilustracao.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
-.box-pai-search {
-    width: 80%;
-    height: 300px;
-    background-color: #292a7b;
-    border-radius: 20px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-.btns-tipo-graduacao {
-    width: 80%;
-    height: 60px;
-    background-color: #fff;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: -30px;
-    justify-content: space-around;
-}
-
-.btns-tipo-graduacao button {
-    width: 35%;
-    background-color: transparent;
-    font-size: 20px;
-    height: 100%;
-    transition: 0.3s ease;
-    border-radius: 20px;
-}
-
-.btns-tipo-graduacao button:hover {
-    background-color: #4345cf;
-    color: #fff;
-}
-
-.box-inputs-escolha {
-    width: 90%;
-    display: flex;
-    justify-content: space-around;
-}
-
-.box-inputs-escolha input,
-.box-inputs-escolha select {
-    width: 100%;
-    height: 40px;
-    border-radius: 20px;
-    background-color: #fff;
-    padding-left: 5px;
-    outline: none;
-}
-
-.label-box-escolha {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    gap: 10px;
-}
-
-.label-box-escolha label {
-    color: #fff;
-
-}
-
-.box-input-progress {
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-
-}
-
-.label-box-chekbox {
-    display: flex;
-    gap: 10px;
-    color: #fff;
-}
-
-#btn-encontrar {
-    width: 80%;
-    height: 40px;
-    background-color: #2d2d2d;
-    color: #fff;
-    border-radius: 20px;
-    transition: 0.3s ease;
-}
-
-#btn-encontrar:hover {
-    background-color: #616161;
-}
 
 @media(max-width:500px) {
     .section1 {
@@ -277,59 +155,6 @@
         width: 100%;
     }
 
-    .box-pai-search {
-        width: 100%;
-        border-radius: 0;
-        height: auto;
-        padding: 20px;
-    }
-
-    .btns-tipo-graduacao {
-        width: 90%;
-        height: 50px;
-        background-color: #fff;
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        position: absolute;
-        top: -25px;
-        justify-content: space-around;
-    }
-
-    .btns-tipo-graduacao button {
-        font-size: 10px;
-    }
-
-    .label-box-escolha {
-        width: 29%;
-    }
-
-    .label-box-escolha label {
-        font-size: 18px;
-        text-align: center;
-    }
-
-    .box-inputs-escolha {
-
-        width: 100%;
-        flex-direction: column;
-        margin-top: 1rem;
-        align-items: center;
-
-    }
-
-    .box-inputs-escolha input,
-    .box-inputs-escolha select {
-        font-size: 10px;
-        width: 85%;
-        height: 30px;
-    }
-
-    .box-input-progress {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
 
     .ilustracao-container-search {
         display: none;
@@ -341,8 +166,8 @@
     }
 }
 
-@media(max-width:390px){
-    .section1{
+@media(max-width:390px) {
+    .section1 {
         height: 100vh;
     }
 }
