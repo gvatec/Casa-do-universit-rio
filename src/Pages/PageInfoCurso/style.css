@@ -1,0 +1,40 @@
+.container-page-info-curso {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.containerCursoInfoDetails {
+    width: 100%;
+    min-height: 90vh;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.cursoDetailBox {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    gap: 20px;
+    position: relative;
+}
+.cursoDetailBox h2{
+    font-weight: 600;
+    font-size: 35px;
+    width: 50%;
+}
+
+.cursoDetailBox img {
+    max-width: 150px;
+}
+
+.cardBoxDetails{
+    width: 400px;
+    height: 450px;
+    background-color: #fff;
+    border: 1px solid silver;
+    position: absolute;
+    right: 0px;
+    border-radius: 10px;
+}

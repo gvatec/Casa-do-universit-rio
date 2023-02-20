@@ -11,8 +11,21 @@ import inst6 from '../../assets/uno.png'
 import SearchBoxComponent from "../../Components/SearchBoxComponent";
 import CarrosselBannersComponent from "../../Components/CarrosselBannersComponent";
 import { BsWhatsapp } from "react-icons/bs";
+import BolsasListComponent from "../../Components/BolsasListComponent";
+
+const bolsas = [
+    { id: 1,instituicao:'impacta',duracao:'4 semestres',tipo:'tecnólogo',sobre:'O curso de Análise e Desenvolvimento de Sistemas forma profissionais capazes de desenvolver, analisar, projetar, implementar e atualizar sistemas de informação para diversos setores de atividades.', logo: 'https://qb-assets.querobolsa.com.br/logos/colorido/large/20/logo_1489432740.png', title: "Análise e desenvolvimento de sistemas", localidades: ['são paulo'], modalidade: ['ead', 'presencial', 'semi-presencial'], mensalidade: 250.00 },
+    { id: 2,instituicao:'impacta',duracao:'4 semestres',tipo:'tecnólogo',sobre:'O curso de Análise e Desenvolvimento de Sistemas forma profissionais capazes de desenvolver, analisar, projetar, implementar e atualizar sistemas de informação para diversos setores de atividades.', logo: 'https://qb-assets.querobolsa.com.br/logos/colorido/large/20/logo_1489432740.png', title: "Análise e desenvolvimento de sistemas", localidades: ['são paulo'], modalidade: ['ead', 'presencial', 'semi-presencial'], mensalidade: 250.00 },
+    { id: 3,instituicao:'impacta',duracao:'4 semestres',tipo:'tecnólogo',sobre:'O curso de Análise e Desenvolvimento de Sistemas forma profissionais capazes de desenvolver, analisar, projetar, implementar e atualizar sistemas de informação para diversos setores de atividades.', logo: 'https://qb-assets.querobolsa.com.br/logos/colorido/large/20/logo_1489432740.png', title: "Análise e desenvolvimento de sistemas", localidades: ['são paulo'], modalidade: ['ead', 'presencial', 'semi-presencial'], mensalidade: 250.00 },
+    { id: 4,instituicao:'impacta',duracao:'4 semestres',tipo:'tecnólogo',sobre:'O curso de Análise e Desenvolvimento de Sistemas forma profissionais capazes de desenvolver, analisar, projetar, implementar e atualizar sistemas de informação para diversos setores de atividades.', logo: 'https://qb-assets.querobolsa.com.br/logos/colorido/large/20/logo_1489432740.png', title: "Análise e desenvolvimento de sistemas", localidades: ['são paulo'], modalidade: ['ead', 'presencial', 'semi-presencial'], mensalidade: 250.00 },
+    { id: 5,instituicao:'impacta',duracao:'4 semestres',tipo:'tecnólogo',sobre:'O curso de Análise e Desenvolvimento de Sistemas forma profissionais capazes de desenvolver, analisar, projetar, implementar e atualizar sistemas de informação para diversos setores de atividades.', logo: 'https://qb-assets.querobolsa.com.br/logos/colorido/large/20/logo_1489432740.png', title: "Análise e desenvolvimento de sistemas", localidades: ['são paulo'], modalidade: ['ead', 'presencial', 'semi-presencial'], mensalidade: 250.00 },
+]
+export { bolsas }
+
+
 
 export default function Home() {
+
 
     return (
         <div className="container-home">
@@ -23,12 +36,7 @@ export default function Home() {
             </section>
 
             <section className="section2">
-                <div className="bolsasInteressantes">
-                    <h2>Bolsas interessantes para você</h2>
-                    <div>
-                        aqui vai as bolsas
-                    </div>
-                </div>
+              <BolsasListComponent></BolsasListComponent>
             </section>
 
 
