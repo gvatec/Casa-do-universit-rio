@@ -19,7 +19,8 @@
     gap: 20px;
     position: relative;
 }
-.cursoDetailBox h2{
+
+.cursoDetailBox h2 {
     font-weight: 600;
     font-size: 35px;
     width: 50%;
@@ -29,12 +30,58 @@
     max-width: 150px;
 }
 
-.cardBoxDetails{
+.cardBoxDetails {
     width: 400px;
     height: 450px;
     background-color: #fff;
     border: 1px solid silver;
     position: absolute;
     right: 0px;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardBoxDetails p {
+    text-align: center;
+}
+
+.cardBoxDetails h2 {
+    font-size: 20px;
+}
+
+.modalidadebox {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.modalidadebox button {
+    background-color: transparent;
+    border: 1px solid #4345cf;
+    padding: 10px;
+    border-radius: 10px;
+    color: #4345cf;
+    transition: 0.3s ease;
+    font-weight: 600;
+}
+
+.modalidadebox button:hover {
+    background-color: #8587ff8e;
+}
+
+#btnGarantirbolsa {
+    position: absolute;
+    bottom: 30px;
+    width: 90%;
+    height: 40px;
+    background-color: #4345cf;
+    color: #fff;
+    font-size: 18px;
+    transform: translate(-50%, 50%);
+    left: 50%;
     border-radius: 10px;
 }
