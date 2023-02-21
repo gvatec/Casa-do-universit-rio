@@ -1,0 +1,92 @@
+.container-minhaconta{
+    width: 100%;
+}
+
+.content-minhaconta{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #F6F7F8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-minhaconta{
+    width: 80%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.title-minhaconta h1{
+    font-weight: 800;
+}
+
+.box-forms-dados{
+    width: 50%;
+    height: auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid silver;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.profile-minhaconta{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 1rem;
+}
+
+.input-file-minhaconta{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.input-file-minhaconta label{
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    background-color: #fff;
+    color: #1d4a9c;
+    pointer-events: none;
+}
+.input-file-minhaconta input{
+    color: transparent;
+    width: 100px;
+}
+
+#img-profile{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+
+}
+
+.box-input-label{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.input-label{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.input-label input{
+    border: 1px solid silver;
+    height: 40px;
+    padding-left: 5px;
+
+}
+#btnsalvarminhaconta{
+    width: 100px;
+    height: 40px;
+    background-color: #1d4a9c;
+    color: #fff;
+    margin-bottom: 20px;
+}

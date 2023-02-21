@@ -39,6 +39,11 @@ export default function PageInfoCurso() {
                                     <strong style={{ fontWeight: "600" }}>Duração:</strong>
                                     <p>{item.duracao}</p>
                                 </div>
+                                <div className="Box-info-details-curso">
+                                    <strong style={{ fontWeight: "600" }}>Sobre:</strong>
+                                    <p>{item.sobre}</p>
+
+                                </div>
 
                                 <div className="cardBoxDetails">
                                     <div style={{ width: "100%", display: 'flex', justifyContent: "center", marginBottom: "1rem" }}><img src={item.logo} alt='logo instituição'></img></div>
@@ -61,7 +66,6 @@ export default function PageInfoCurso() {
 
                                     <button id="btnGarantirbolsa">Garantir esta bolsa</button>
                                 </div>
-
                             </div>
                         )
                     })

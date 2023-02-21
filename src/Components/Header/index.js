@@ -66,7 +66,7 @@ export default function Header() {
             {menu !== false ?
                 <div className="menu-profile">
                     <div className="profile-user"><FiUser color='#fff'></FiUser></div>
-                    <a href="">Editar Perfil</a>
+                    <a href="/minha-conta">Editar Perfil</a>
                     <button id="btnlogout" type="button" onClick={logout}>Sair</button>
                 </div> : ''}
         </header>

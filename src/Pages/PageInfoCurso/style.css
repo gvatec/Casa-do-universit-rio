@@ -41,6 +41,7 @@
     padding: 10px;
     display: flex;
     flex-direction: column;
+   
 }
 
 .cardBoxDetails p {
@@ -49,6 +50,8 @@
 
 .cardBoxDetails h2 {
     font-size: 20px;
+    width: 100%;
+    text-align: center;
 }
 
 .modalidadebox {
@@ -84,4 +87,11 @@
     transform: translate(-50%, 50%);
     left: 50%;
     border-radius: 10px;
+}
+
+.Box-info-details-curso{
+    width: 60%;
+    border: 1px solid silver;
+    border-radius: 10px;
+    padding: 15px;
 }
