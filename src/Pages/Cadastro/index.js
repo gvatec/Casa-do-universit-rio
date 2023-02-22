@@ -38,7 +38,10 @@ const Cadastro = () => {
             email: email,
             telefone: telefone,
             datanascimento: datanascimento,
-            password: password
+            password: password,
+            rg:'',
+            cpf:1,
+            nomemae:''
         })
             .then(() => {
                 document.getElementById('error').setAttribute('style', 'color:green;transition: color background 0.5s ease;font-Weight:600;background:rgb(172, 255, 172);padding:5px;')
