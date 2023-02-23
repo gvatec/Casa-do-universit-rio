@@ -6,20 +6,36 @@ import api from '../../services/api'
 
 
 export default function Header() {
-
-    const [user, setUser] = useState({})
+    const [user, setUser] = useState([])
     const [menu, setMenu] = useState(false)
+    const [load, setLoad] = useState(true)
+    const [fotopreview, setFotopreview] = useState('')
+    const [data, setData] = useState([])
+
 
     useEffect(() => {
-        setUser(JSON.parse(localStorage.getItem('sessionCasaUniversitarioLogin')))
+        setData([JSON.parse(localStorage.getItem('sessionCasaUniversitarioLogin'))])
 
     }, [])
+
+    useEffect(() => {
+        setUser(JSON.parse(localStorage.getItem('sessionCasaUniversitarioLogin')) || '[]')
+        if (user !== []) {
+            api.get(`/files/${data.map(item => item.urlfoto)[0]}`)
+                .then((value) => {
+                    setFotopreview((value.config.baseURL + 'files/' + data.map(item => item.urlfoto)[0]))
+                    setLoad(false)
+                })
+        }
+        //console.log(user)
+
+    }, [data])
 
     async function logout() {
         await api.delete(`/session/${user.id}`)
             .then(() => {
-                localStorage.removeItem('sessionCasaUniversitarioLogin')
-                window.location.reload();
+                localStorage.setItem('sessionCasaUniversitarioLogin', JSON.stringify([]))
+                window.location.href = '/';
             })
     }
 
@@ -39,7 +55,7 @@ export default function Header() {
                     <button>Ajuda</button>
                 </div>
                 <input type={'search'} placeholder='Pesquisar cursos ou instituições'></input>
-                {window.screen.width < 500 ? <button onClick={() => document.querySelector('.menu-mobile').setAttribute('style', 'display:flex')} id="menubtnmobile"><FiMenu color="#fff" size={35}></FiMenu></button> : ''}
+                {window.screen.width < 500 ? <button onClick={() => document.querySelector('.menu-mobile').setAttribute('style', 'display:flex')} id="menubtnmobile">{fotopreview == '' ? <FiMenu color={"#fff"} size={35}></FiMenu> : <img src={fotopreview} alt='profile user'></img>}</button> : ''}
                 {window.screen.width < 500 ? <nav className="menu-mobile">
                     <button id="close-btn-mobile" onClick={() => document.querySelector('.menu-mobile').setAttribute('style', 'display:none')}>X</button>
                     <h3>✌️Olá {String(user.name).slice(0, 10)}...</h3>
@@ -53,19 +69,19 @@ export default function Header() {
                     </div>
                 </nav> : ''}
 
-                {!user ? <div className="user-nav">
+                {user.length == 0 ? <div className="user-nav">
                     <FiUser size={20} color="#fff"></FiUser>
                     <a href="/login">Entrar</a>
                     <a href="/cadastro">Cadastre-se</a>
                 </div> :
                     <div className="profile-box">
-                        <div onClick={() => setMenu(menu === false ? true : false)} className="profile-user"><FiUser color='#fff'></FiUser></div>
+                        <div onClick={() => setMenu(menu === false ? true : false)} className="profile-user">{fotopreview == '' ? <FiUser color={"#fff"} size={35}></FiUser> : <img src={fotopreview} alt='profile user'></img>}</div>
                         <span title={user.name}>✌️Olá {String(user.name).slice(0, 10)}...</span>
                     </div>}
             </nav>
             {menu !== false ?
                 <div className="menu-profile">
-                    <div className="profile-user"><FiUser color='#fff'></FiUser></div>
+                    <div className="profile-user">{fotopreview == '' ? <FiUser color="#fff" size={35}></FiUser> : <img src={fotopreview} alt='profile user'></img>}</div>
                     <a href="/minha-conta">Editar Perfil</a>
                     <button id="btnlogout" type="button" onClick={logout}>Sair</button>
                 </div> : ''}

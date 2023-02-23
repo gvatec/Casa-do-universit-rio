@@ -40,7 +40,7 @@ const Cadastro = () => {
             datanascimento: datanascimento,
             password: password,
             rg:'',
-            cpf:1,
+            cpf:'',
             nomemae:'',
             cep:''
         })

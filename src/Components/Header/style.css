@@ -151,7 +151,12 @@
     align-items: center;
     cursor: pointer;
 }
-
+.profile-user img{
+    object-fit: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
 .menu-profile {
     width: 300px;
     height: 400px;
