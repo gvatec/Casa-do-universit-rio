@@ -29,7 +29,7 @@ export default function MinhaConta() {
 
     }, [])
     useEffect(() => {
-        if (data !== []) {
+        if (data.length !== 0) {
             api.get(`/files/${data.map(item => item.urlfoto)[0]}`)
                 .then((value) => {
                     setFotopreview((value.config.baseURL + 'files/' + data.map(item => item.urlfoto)[0]))

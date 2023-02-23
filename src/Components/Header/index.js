@@ -19,15 +19,15 @@ export default function Header() {
     }, [])
 
     useEffect(() => {
-        setUser(JSON.parse(localStorage.getItem('sessionCasaUniversitarioLogin')) || '[]')
-        if (user !== []) {
+        setUser(JSON.parse(localStorage.getItem('sessionCasaUniversitarioLogin')) || [])
+        if (user.length !== 0) {
             api.get(`/files/${data.map(item => item.urlfoto)[0]}`)
                 .then((value) => {
                     setFotopreview((value.config.baseURL + 'files/' + data.map(item => item.urlfoto)[0]))
                     setLoad(false)
                 })
         }
-        //console.log(user)
+        console.log(user.length)
 
     }, [data])
 
