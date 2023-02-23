@@ -1,8 +1,8 @@
-.container-minhaconta{
+.container-minhaconta {
     width: 100%;
 }
 
-.content-minhaconta{
+.content-minhaconta {
     width: 100%;
     min-height: 100vh;
     background-color: #F6F7F8;
@@ -11,16 +11,17 @@
     align-items: center;
 }
 
-.title-minhaconta{
+.title-minhaconta {
     width: 80%;
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
-.title-minhaconta h1{
+
+.title-minhaconta h1 {
     font-weight: 800;
 }
 
-.box-forms-dados{
+.box-forms-dados {
     width: 50%;
     height: auto;
     padding: 20px;
@@ -30,21 +31,23 @@
     margin-bottom: 1rem;
 }
 
-.profile-minhaconta{
+.profile-minhaconta {
     display: flex;
     align-items: center;
     gap: 30px;
     margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
-.input-file-minhaconta{
+.input-file-minhaconta {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
 }
-.input-file-minhaconta label{
+
+.input-file-minhaconta label {
     position: absolute;
     width: 100px;
     height: 30px;
@@ -52,38 +55,41 @@
     color: #1d4a9c;
     pointer-events: none;
 }
-.input-file-minhaconta input{
+
+.input-file-minhaconta input {
     color: transparent;
     width: 100px;
 }
 
-#img-profile{
-    width: 60px;
-    height: 60px;
+#img-profile {
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-
+    object-fit: cover;
 }
 
-.box-input-label{
+.box-input-label {
     width: 100%;
     display: flex;
     gap: 10px;
     margin-bottom: 10px;
 }
 
-.input-label{
+.input-label {
     width: 50%;
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
-.input-label input{
+
+.input-label input {
     border: 1px solid silver;
     height: 40px;
     padding-left: 5px;
 
 }
-#btnsalvarminhaconta{
+
+#btnsalvarminhaconta {
     width: 100px;
     height: 40px;
     background-color: #1d4a9c;

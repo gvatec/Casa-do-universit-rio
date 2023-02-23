@@ -13,6 +13,9 @@ export default function Login() {
         e.preventDefault();
 
         await api.post('/session', {
+            Headers:{
+                authorization:email
+            },
             email: email,
             password: password
         })
@@ -26,6 +29,8 @@ export default function Login() {
                     email: data.data.email,
                     telefone: data.data.telefone,
                     datanascimento: data.data.datanascimento,
+                    nomemae:data.data.nomemae,
+                    urlfoto:data.data.urlfoto
                 }
 
                 //console.log(data.data.name)
