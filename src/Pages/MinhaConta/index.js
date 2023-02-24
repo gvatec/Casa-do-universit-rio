@@ -17,37 +17,53 @@ export default function MinhaConta() {
   const [nomemae, setNomemae] = useState("");
   const [telefone, setTelefone] = useState("");
   const [cep, setCep] = useState("");
-
   const [data, setData] = useState([]);
+  const [objfoto, setObjfoto] = useState();
 
   useEffect(() => {
     setData([JSON.parse(localStorage.getItem("sessionCasaUniversitarioLogin"))]);
   }, []);
+
+
   useEffect(() => {
     if (data.length !== 0) {
       api.get(`/files/${data.map((item) => item.urlfoto)[0]}`).then((value) => {
         setFotopreview(value.config.baseURL + "files/" + data.map((item) => item.urlfoto)[0]);
+
       });
+      setNome(data.map((item) => item.name)[0])
+      setEmail(data.map((item) => item.email)[0])
+      setTelefone(data.map((item) => item.telefone)[0])
+      setNomemae(data.map((item) => item.nomemae)[0])
     }
-    //console.log(data)
+
+
+    console.log(objfoto)
   }, [data]);
+
+
+
 
   function upload(e) {
     const foto1url = e.target.files[0];
     setFotopreview(URL.createObjectURL(foto1url));
     setFotopreview2(URL.createObjectURL(foto1url));
     setFotoperfil(foto1url);
+
+
   }
 
   async function updateprofile() {
+
     const formdata = new FormData();
     formdata.append("name", nome == "" ? data.map((item) => item.name)[0] : nome);
     formdata.append("email", email == "" ? data.map((item) => item.email)[0] : email);
     formdata.append("telefone", telefone == "" ? data.map((item) => item.telefone)[0] : telefone);
     formdata.append("nomemae", nomemae == "" ? data.map((item) => item.telefone)[0] : nomemae);
+    formdata.append("datanascimento", datanascimento == "" ? data.map((item) => item.datanascimento)[0] : datanascimento);
     formdata.append("rg", rg);
     formdata.append("cpf", cpf);
-    formdata.append("file", fotoperfil == "" ? data.map((item) => item.urlfoto)[0] : fotoperfil);
+    formdata.append("file", fotoperfil == "" ? objfoto : fotoperfil);
     formdata.append("cep", cep == "" ? data.map((item) => item.cep)[0] : cep);
 
     await api
@@ -69,6 +85,7 @@ export default function MinhaConta() {
       })
       .catch((err) => {
         console.log(err);
+        alert('carregue uma foto, mesmo que seja a mesma, atualização somente assim por enquanto....')
       });
   }
 
@@ -113,11 +130,11 @@ export default function MinhaConta() {
           <div className="box-input-label">
             <div className="input-label">
               <label>Cpf</label>
-              <input onChange={(e) => setCpf(e.target.value)} type="text"></input>
+              <input className="err" onChange={(e) => setCpf(e.target.value)} type="text"></input>
             </div>
             <div className="input-label">
               <label>Rg</label>
-              <input onChange={(e) => setRg(e.target.value)} type="text"></input>
+              <input className="err" onChange={(e) => setRg(e.target.value)} type="text"></input>
             </div>
           </div>
           <div className="box-input-label">

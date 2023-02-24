@@ -23,9 +23,6 @@
     margin-bottom: 3rem;
 }
 
-
-
-
 .title {
     width: 100%;
     text-align: center;
@@ -34,7 +31,7 @@
 
 .title h2 {
     color: #2d2d2d;
-
+    font-weight: 800;
 }
 
 .box-categorias-setor {
@@ -143,9 +140,7 @@
 }
 
 @media(max-width:500px) {
-    .section1 {
-        height: 85vh;
-    }
+
 
     .box-categorias-setor {
         flex-direction: column;
@@ -155,6 +150,12 @@
     .container-novidades {
         flex-direction: column;
         align-items: center;
+        width: 100%;
+    }
+
+
+    .section2 {
+        margin-top: -1rem;
     }
 
     .novidade1,
@@ -163,10 +164,16 @@
         height: 200px;
     }
 
+    .section4 {
+        margin-top: 5rem;
+    }
+
     .section5 {
         flex-direction: column;
         align-items: center;
         padding-top: 1rem;
+        padding-bottom: 1rem;
+        height: auto;
     }
 
     .container-search-cursos {
@@ -182,7 +189,13 @@
         width: 90%;
         align-items: center;
     }
+
+    .profile-box span {
+        display: none;
+    }
 }
+
+
 
 @media(max-width:390px) {
     .section1 {

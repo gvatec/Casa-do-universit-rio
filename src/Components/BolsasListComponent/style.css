@@ -47,3 +47,14 @@
 .bolsaItem h2 {
     font-size: 20px;
 }
+
+@media(max-width:500px) {
+
+    .bolsasInteressantes {
+        width: 95%;
+    }
+
+    .bolsasInteressantes h2 {
+        text-align: center;
+    }
+}

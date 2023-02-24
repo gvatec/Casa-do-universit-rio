@@ -88,3 +88,12 @@
 #arrow2:hover {
     background-color: #ffffff92;
 }
+
+@media(max-width:500px){
+    .banneritem{
+        height: auto;
+    }
+    .banner{
+        height: 300px;
+    }
+}

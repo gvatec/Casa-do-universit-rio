@@ -22,6 +22,26 @@ const CarrosselBannersComponent = (props) => {
         "https://img.imageboss.me/qb-content/width/1920/quality:95,dpr:1/dc949b6a-938d-4f63-aa1e-e2a72d15aae9.png",
     },
   ];
+  const Bannersmobile = [
+    {
+      id: 1,
+      banner:
+        "https://img.imageboss.me/qb-content/width/1920/quality:95,dpr:1/ff35cf14-04a0-4af6-9648-feec2e2c6f48.png",
+    },
+    {
+      id: 2,
+      banner:
+        "https://img.imageboss.me/qb-content/width/1920/quality:95,dpr:1/dc949b6a-938d-4f63-aa1e-e2a72d15aae9.png",
+    },
+    {
+      id: 3,
+      banner:
+        "https://img.imageboss.me/qb-content/width/1920/quality:95,dpr:1/dc949b6a-938d-4f63-aa1e-e2a72d15aae9.png",
+    },
+  ];
+
+
+
 
   function stepBannerLeft() {
     document.querySelectorAll(".banner")[0].classList.add("removeanimation");
@@ -70,9 +90,13 @@ const CarrosselBannersComponent = (props) => {
   return (
     <section className="containerCarrossel">
       <div className="banneritem">
-        {Banners.map((item) => {
+        {window.screen.width > 500 ? Banners.map((item) => {
           return <img key={item.id} className="banner" src={item.banner} alt="Banners"></img>;
-        })}
+        }) :
+          Bannersmobile.map((item) => {
+            return <img key={item.id} className="banner" src={item.banner} alt="Banners"></img>;
+          })
+        }
         <button id="arrow1" onClick={stepBannerLeft}>
           <FiArrowLeft color="#2d2d2d" size={25}></FiArrowLeft>
         </button>

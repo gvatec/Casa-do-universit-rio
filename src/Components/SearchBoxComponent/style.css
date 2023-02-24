@@ -113,17 +113,17 @@
         border-radius: 0;
         height: auto;
         padding: 20px;
+        z-index: 100;
     }
 
     .btns-tipo-graduacao {
-        width: 90%;
-        height: 50px;
-        background-color: #fff;
-        border-radius: 20px;
+        width: 100%;
+        height: 60px;
+        border-radius: 0;
         display: flex;
         align-items: center;
         position: absolute;
-        top: -25px;
+        top: -30px;
         justify-content: space-around;
     }
 
@@ -132,7 +132,11 @@
     }
 
     .label-box-escolha {
-        width: 29%;
+        width: 100%;
+        padding-top: 1rem;
+    }
+    .label-box-escolha input{
+        width: 90%;
     }
 
     .label-box-escolha label {
@@ -152,8 +156,9 @@
     .box-inputs-escolha input,
     .box-inputs-escolha select {
         font-size: 10px;
-        width: 85%;
-        height: 30px;
+        width: 90%;
+        height: 40px;
+        border-radius: 0;
     }
 
     .box-input-progress {

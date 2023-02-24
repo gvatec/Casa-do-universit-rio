@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './style.css'
 import { GoMortarBoard } from 'react-icons/go'
 import { MdWork } from 'react-icons/md'
-import { FaPencilRuler,FaTools } from 'react-icons/fa'
+import { FaPencilRuler, FaTools } from 'react-icons/fa'
 
 const SearchBoxComponent = () => {
 
@@ -14,12 +14,22 @@ const SearchBoxComponent = () => {
                 <h2 style={{ color: '#fff' }}>Encontre sua bolsa de estudos com até 80% de desconto!</h2>
     </div>*/}
             <div className="box-pai-search">
-                <div className="btns-tipo-graduacao">
-                    <button><GoMortarBoard color='#fff'></GoMortarBoard>Graduação</button>
-                    <button><MdWork color="#fff"></MdWork>Pós-Graduação</button>
-                    <button><FaPencilRuler color="#fff"></FaPencilRuler>Cursos livres</button>
-                    <button><FaTools color="#fff"></FaTools>Cursos Técnicos</button>
-                </div>
+                {window.screen.width > 500 ?
+                    <div className="btns-tipo-graduacao">
+                        <button><GoMortarBoard color='#fff'></GoMortarBoard>Graduação</button>
+                        <button><MdWork color="#fff"></MdWork>Pós-Graduação</button>
+                        <button><FaPencilRuler color="#fff"></FaPencilRuler>Cursos livres</button>
+                        <button><FaTools color="#fff"></FaTools>Cursos Técnicos</button>
+                        <button><FaTools color="#fff"></FaTools>Continente Africano</button>
+                    </div>:
+                     <div className="btns-tipo-graduacao">
+                     <button>Graduação</button>
+                     <button>Pós-Graduação</button>
+                     <button>Cursos livres</button>
+                     <button>Cursos Técnicos</button>
+                     <button title="Continente africano">Conti. Africano</button>
+                 </div>
+                    }
 
                 <div className="box-inputs-escolha">
                     <div className="label-box-escolha">

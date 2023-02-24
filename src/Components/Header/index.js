@@ -47,7 +47,7 @@ export default function Header() {
           <button>Profissões</button>
           <button>Ajuda</button>
         </div>
-        <input type={"search"} placeholder="Pesquisar cursos ou instituições"></input>
+        {window.screen.width > 500 ? <input type={"search"} placeholder="Pesquisar cursos ou instituições"></input> : <input style={{ visibility: 'hidden' }} type={"search"} placeholder="Pesquisar cursos ou instituições"></input>}
         {window.screen.width < 500 ? (
           <button
             onClick={() =>
@@ -55,11 +55,7 @@ export default function Header() {
             }
             id="menubtnmobile"
           >
-            {fotopreview == "" ? (
-              <FiMenu color={"#fff"} size={35}></FiMenu>
-            ) : (
-              <img src={fotopreview} alt="profile user"></img>
-            )}
+            <FiMenu color={"#fff"} size={30}></FiMenu>
           </button>
         ) : (
           ""
@@ -74,15 +70,25 @@ export default function Header() {
             >
               X
             </button>
-            <h3>✌️Olá {String(user.name).slice(0, 10)}...</h3>
-            <div className="btn-area-mobile">
-              <a href="/login">Entrar</a>
-              <a href="/cadastro">Cadastre-se</a>
-              <button>Faculdades</button>
-              <button>Cursos</button>
-              <button>Profissões</button>
-              <button>Ajuda</button>
-            </div>
+            <h3>✌️Olá {user.name}</h3>
+            {user.length == 0 ?
+              <div className="btn-area-mobile">
+                <a href="/login">Entrar</a>
+                <a href="/cadastro">Cadastre-se</a>
+                <button>Faculdades</button>
+                <button>Cursos</button>
+                <button>Profissões</button>
+                <button>Ajuda</button>
+              </div> :
+              <div className="btn-area-mobile">
+
+                <button onClick={() => window.location.href = '/minha-conta'}>Editar perfil</button>
+                <button>Faculdades</button>
+                <button>Cursos</button>
+                <button>Profissões</button>
+                <button>Ajuda</button>
+              </div>
+            }
           </nav>
         ) : (
           ""
