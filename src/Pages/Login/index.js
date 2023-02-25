@@ -13,9 +13,6 @@ export default function Login() {
         e.preventDefault();
 
         await api.post('/session', {
-            Headers:{
-                authorization:email
-            },
             email: email,
             password: password
         })
@@ -24,6 +21,7 @@ export default function Login() {
                 document.getElementById('errorORsucsses').innerText = 'Login efetuado com sucesso!'
 
                 let dateUser = {
+                    idsessao:data.data.id,
                     id: data.data.iduser,
                     name: data.data.name,
                     email: data.data.email,

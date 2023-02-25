@@ -27,7 +27,7 @@ export default function Header() {
   }, [data]);
 
   async function logout() {
-    await api.delete(`/session/${user.id}`).then(() => {
+    await api.delete(`/session/${user.idsessao}`).then(() => {
       localStorage.setItem("sessionCasaUniversitarioLogin", JSON.stringify([]));
       window.location.href = "/";
     });
@@ -82,7 +82,6 @@ export default function Header() {
                 <button>Ajuda</button>
               </div> :
               <div className="btn-area-mobile">
-
                 <button onClick={() => window.location.href = '/minha-conta'}>Editar perfil</button>
                 <button>Faculdades</button>
                 <button>Cursos</button>
@@ -90,6 +89,9 @@ export default function Header() {
                 <button>Ajuda</button>
               </div>
             }
+                <button id="btnlogout" type="button" onClick={logout}>
+                  sair
+                </button>
           </nav>
         ) : (
           ""
@@ -107,7 +109,7 @@ export default function Header() {
               {fotopreview == "" ? (
                 <FiUser color={"#fff"} size={35}></FiUser>
               ) : (
-                <img src={fotopreview} alt="profile user"></img>
+                <img onClick={() => window.location.href = '/minha-conta'} style={{ width: "50px", height: "50px", borderRadius: "50%", objectFit: "cover" }} src={fotopreview} alt="profile user"></img>
               )}
             </div>
             <span title={user.name}>✌️Olá {String(user.name).slice(0, 10)}...</span>
@@ -121,7 +123,7 @@ export default function Header() {
             {fotopreview == "" ? (
               <FiUser color="#fff" size={35}></FiUser>
             ) : (
-              <img onClick={()=>window.location.href='/minha-conta'} style={{ width: "80px", height: "80px",borderRadius:"50%",objectFit:"cover" }} src={fotopreview} alt="profile user"></img>
+              <img onClick={() => window.location.href = '/minha-conta'} style={{ width: "80px", height: "80px", borderRadius: "50%", objectFit: "cover" }} src={fotopreview} alt="profile user"></img>
             )}
           </div>
           <a href="/minha-conta">Editar Perfil</a>
