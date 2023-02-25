@@ -8,7 +8,6 @@ import api from "../../services/api";
 export default function MinhaConta() {
   const [fotopreview, setFotopreview] = useState("");
   const [fotopreview2, setFotopreview2] = useState("");
-  const [fotoperfil, setFotoperfil] = useState("");
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [cpf, setCpf] = useState("");
@@ -18,7 +17,6 @@ export default function MinhaConta() {
   const [telefone, setTelefone] = useState("");
   const [cep, setCep] = useState("");
   const [data, setData] = useState([]);
-  const [objfoto, setObjfoto] = useState();
 
   useEffect(() => {
     setData([JSON.parse(localStorage.getItem("sessionCasaUniversitarioLogin"))]);
@@ -35,21 +33,42 @@ export default function MinhaConta() {
       setEmail(data.map((item) => item.email)[0])
       setTelefone(data.map((item) => item.telefone)[0])
       setNomemae(data.map((item) => item.nomemae)[0])
+      setRg(data.map((item) => item.rg)[0])
+      setCpf(data.map((item) => item.cpf)[0])
+      setCep(data.map((item) => item.cep)[0])
     }
-
-
-    console.log(objfoto)
   }, [data]);
 
 
-
-
-  function upload(e) {
+  async function upload(e) {
     const foto1url = e.target.files[0];
     setFotopreview(URL.createObjectURL(foto1url));
     setFotopreview2(URL.createObjectURL(foto1url));
-    setFotoperfil(foto1url);
 
+    const formdata1 = new FormData();
+    formdata1.append("file", foto1url);
+
+    await api.put(`/profile/${data.map((item) => item.id)[0]}`, formdata1)
+      .then(() => {
+        let dateUser = {
+          id: data.map((item) => item.id)[0],
+          name: data.map((item) => item.name)[0],
+          email: data.map((item) => item.email)[0],
+          telefone: data.map((item) => item.telefone)[0],
+          datanascimento: data.map((item) => item.datanascimento)[0],
+          nomemae: data.map((item) => item.nomemae)[0],
+          rg: data.map((item) => item.rg)[0],
+          cpf: data.map((item) => item.cpf)[0],
+          cep: data.map((item) => item.cep)[0],
+          urlfoto: foto1url.name,
+        };
+        localStorage.setItem("sessionCasaUniversitarioLogin", JSON.stringify(dateUser));
+        alert('imagem atualziada com sucesso')
+        window.location.reload();
+      })
+      .catch((err)=>{
+        console.log(err)
+      })
 
   }
 
@@ -59,11 +78,10 @@ export default function MinhaConta() {
     formdata.append("name", nome == "" ? data.map((item) => item.name)[0] : nome);
     formdata.append("email", email == "" ? data.map((item) => item.email)[0] : email);
     formdata.append("telefone", telefone == "" ? data.map((item) => item.telefone)[0] : telefone);
-    formdata.append("nomemae", nomemae == "" ? data.map((item) => item.telefone)[0] : nomemae);
+    formdata.append("nomemae", nomemae == "" ? data.map((item) => item.nomemae)[0] : nomemae);
     formdata.append("datanascimento", datanascimento == "" ? data.map((item) => item.datanascimento)[0] : datanascimento);
-    formdata.append("rg", rg);
-    formdata.append("cpf", cpf);
-    formdata.append("file", fotoperfil == "" ? objfoto : fotoperfil);
+    formdata.append("rg", rg == "" ? data.map((item) => item.rg)[0] : rg);
+    formdata.append("cpf", cpf == "" ? data.map((item) => item.cpf)[0] : cpf);
     formdata.append("cep", cep == "" ? data.map((item) => item.cep)[0] : cep);
 
     await api
@@ -76,8 +94,10 @@ export default function MinhaConta() {
           telefone: value.data.telefone,
           datanascimento: value.data.datanascimento,
           nomemae: value.data.nomemae,
+          rg: value.data.rg,
+          cpf: value.data.cpf,
           cep: value.data.cep,
-          urlfoto: value.data.urlfoto,
+          urlfoto: data.map((item) => item.urlfoto)[0],
         };
         localStorage.setItem("sessionCasaUniversitarioLogin", JSON.stringify(dateUser));
         alert("atualizado com sucesso");
@@ -85,7 +105,7 @@ export default function MinhaConta() {
       })
       .catch((err) => {
         console.log(err);
-        alert('carregue uma foto, mesmo que seja a mesma, atualização somente assim por enquanto....')
+        alert('Ops, tente novamente mais tarde!')
       });
   }
 
@@ -130,11 +150,11 @@ export default function MinhaConta() {
           <div className="box-input-label">
             <div className="input-label">
               <label>Cpf</label>
-              <input className="err" onChange={(e) => setCpf(e.target.value)} type="text"></input>
+              <input value={cpf} className="err" onChange={(e) => setCpf(e.target.value)} type="text"></input>
             </div>
             <div className="input-label">
               <label>Rg</label>
-              <input className="err" onChange={(e) => setRg(e.target.value)} type="text"></input>
+              <input value={rg} className="err" onChange={(e) => setRg(e.target.value)} type="text"></input>
             </div>
           </div>
           <div className="box-input-label">
@@ -170,7 +190,7 @@ export default function MinhaConta() {
           <div className="box-input-label">
             <div className="input-label">
               <label>Cep</label>
-              <input onChange={(e) => setCep(e.target.value)} type="text"></input>
+              <input value={cep} onChange={(e) => setCep(e.target.value)} type="text"></input>
             </div>
           </div>
         </div>

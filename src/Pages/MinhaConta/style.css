@@ -59,6 +59,7 @@
 .input-file-minhaconta input {
     color: transparent;
     width: 100px;
+    cursor: pointer;
 }
 
 #img-profile {

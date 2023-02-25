@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './style.css'
 import { GoMortarBoard } from 'react-icons/go'
 import { MdWork } from 'react-icons/md'
-import { FaPencilRuler, FaTools } from 'react-icons/fa'
+import { FaMap, FaPencilRuler, FaTools } from 'react-icons/fa'
 
 const SearchBoxComponent = () => {
 
@@ -20,7 +20,7 @@ const SearchBoxComponent = () => {
                         <button><MdWork color="#fff"></MdWork>Pós-Graduação</button>
                         <button><FaPencilRuler color="#fff"></FaPencilRuler>Cursos livres</button>
                         <button><FaTools color="#fff"></FaTools>Cursos Técnicos</button>
-                        <button><FaTools color="#fff"></FaTools>Continente Africano</button>
+                        <button title="Continente africano"><FaMap color="#fff"></FaMap>Conti. Africano</button>
                     </div>:
                      <div className="btns-tipo-graduacao">
                      <button>Graduação</button>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useSyncExternalStore } from "react";
 import "./style.css";
 import logo from "../../assets/logo.png";
 import { FiUser, FiMenu } from "react-icons/fi";
@@ -32,6 +32,7 @@ export default function Header() {
       window.location.href = "/";
     });
   }
+
 
   return (
     <header className="header">
@@ -110,21 +111,33 @@ export default function Header() {
               )}
             </div>
             <span title={user.name}>✌️Olá {String(user.name).slice(0, 10)}...</span>
+
           </div>
         )}
       </nav>
       {menu !== false ? (
-        <div className="menu-profile">
+        <div onMouseLeave={() => setMenu(false)} className="menu-profile">
           <div className="profile-user">
             {fotopreview == "" ? (
               <FiUser color="#fff" size={35}></FiUser>
             ) : (
-              <img src={fotopreview} alt="profile user"></img>
+              <img onClick={()=>window.location.href='/minha-conta'} style={{ width: "80px", height: "80px",borderRadius:"50%",objectFit:"cover" }} src={fotopreview} alt="profile user"></img>
             )}
           </div>
           <a href="/minha-conta">Editar Perfil</a>
+          <div style={{
+            display: "flex",
+            flexDirection: "column",
+            textAlign: 'start',
+            marginTop: "2rem"
+          }}>
+            <a href="#">Faculdades</a>
+            <a href="#">Cursos</a>
+            <a href="#">Profissões</a>
+            <a href="#">Ajuda</a>
+          </div>
           <button id="btnlogout" type="button" onClick={logout}>
-            Sair
+            sair
           </button>
         </div>
       ) : (

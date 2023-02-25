@@ -30,7 +30,9 @@ export default function Login() {
                     telefone: data.data.telefone,
                     datanascimento: data.data.datanascimento,
                     nomemae:data.data.nomemae,
-                    urlfoto:data.data.urlfoto
+                    urlfoto:data.data.urlfoto,
+                    rg:data.data.rg,
+                    cpf:data.data.cpf,
                 }
 
                 //console.log(data.data.name)

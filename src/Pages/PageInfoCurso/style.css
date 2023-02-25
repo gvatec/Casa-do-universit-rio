@@ -70,6 +70,7 @@
     color: #4345cf;
     transition: 0.3s ease;
     font-weight: 600;
+    text-transform: capitalize;
 }
 
 .modalidadebox button:hover {

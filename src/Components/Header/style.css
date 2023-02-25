@@ -146,8 +146,8 @@
 }
 
 .profile-user {
-    width: 40px;
-    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
     border-radius: 50%;
     background-color: rgb(219, 219, 219);
     display: flex;
@@ -170,11 +170,12 @@
     position: absolute;
     z-index: 1000;
     right: 1rem;
-    box-shadow: 5px 5px 10px black;
+    box-shadow: 5px 5px 20px black;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 2rem;
+    border-radius: 0 0 10px 10px;
 }
 
 .menu-profile a {
