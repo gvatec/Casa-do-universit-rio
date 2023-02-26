@@ -99,9 +99,10 @@ export default function MinhaConta() {
           cep: value.data.cep,
           urlfoto: data.map((item) => item.urlfoto)[0],
         };
+        //console.log(value)
         localStorage.setItem("sessionCasaUniversitarioLogin", JSON.stringify(dateUser));
         alert("atualizado com sucesso");
-        window.location.reload();
+       // window.location.reload();
       })
       .catch((err) => {
         console.log(err);

@@ -71,7 +71,6 @@ export default function Header() {
             >
               X
             </button>
-            <h3>✌️Olá {user.name}</h3>
             {user.length == 0 ?
               <div className="btn-area-mobile">
                 <a href="/login">Entrar</a>
@@ -82,16 +81,18 @@ export default function Header() {
                 <button>Ajuda</button>
               </div> :
               <div className="btn-area-mobile">
+                <img onClick={() => window.location.href = '/minha-conta'} style={{ width: "70px", height: "70px", borderRadius: "50%", objectFit: "cover" }} src={fotopreview} alt="profile user"></img>
+                <h3 style={{ marginBottom: "2rem" }}>✌️Olá {user.name}</h3>
                 <button onClick={() => window.location.href = '/minha-conta'}>Editar perfil</button>
                 <button>Faculdades</button>
                 <button>Cursos</button>
                 <button>Profissões</button>
                 <button>Ajuda</button>
-              </div>
-            }
                 <button id="btnlogout" type="button" onClick={logout}>
                   sair
                 </button>
+              </div>
+            }
           </nav>
         ) : (
           ""
@@ -105,11 +106,11 @@ export default function Header() {
           </div>
         ) : (
           <div className="profile-box">
-            <div onClick={() => setMenu(menu === false ? true : false)} className="profile-user">
+            <div onMouseEnter={() => setMenu(menu === false ? true : false)} className="profile-user">
               {fotopreview == "" ? (
                 <FiUser color={"#fff"} size={35}></FiUser>
               ) : (
-                <img onClick={() => window.location.href = '/minha-conta'} style={{ width: "50px", height: "50px", borderRadius: "50%", objectFit: "cover" }} src={fotopreview} alt="profile user"></img>
+                <img style={{ width: "50px", height: "50px", borderRadius: "50%", objectFit: "cover" }} src={fotopreview} alt="profile user"></img>
               )}
             </div>
             <span title={user.name}>✌️Olá {String(user.name).slice(0, 10)}...</span>
@@ -123,7 +124,7 @@ export default function Header() {
             {fotopreview == "" ? (
               <FiUser color="#fff" size={35}></FiUser>
             ) : (
-              <img onClick={() => window.location.href = '/minha-conta'} style={{ width: "80px", height: "80px", borderRadius: "50%", objectFit: "cover" }} src={fotopreview} alt="profile user"></img>
+              <img onClick={() => window.location.href = '/minha-conta'} style={{ width: "70px", height: "70px", borderRadius: "50%", objectFit: "cover" }} src={fotopreview} alt="profile user"></img>
             )}
           </div>
           <a href="/minha-conta">Editar Perfil</a>

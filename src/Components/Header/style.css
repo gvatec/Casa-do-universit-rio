@@ -83,6 +83,7 @@
     padding: 10px;
     right: 0;
     bottom: 0;
+    top: 0;
     box-shadow: 0 0 50px 10px #000;
     z-index: 10000;
 }
@@ -113,14 +114,15 @@
     font-size: 18px;
     background-color: transparent;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+    font-weight: 600;
 
 }
 
 .btn-area-mobile a {
     text-decoration: none;
     width: 90%;
-    height: 55px;
+    height: 40px;
     color: #1d4a9c;
     font-size: 18px;
     display: flex;
@@ -203,6 +205,15 @@
 }
 
 @media(max-width:500px) {
+
+    #btnlogout {
+        bottom: -50px;
+    }
+    #btnlogout:hover{
+        background-color: transparent;
+        color: #1d4a9c;
+    }
+
     .menu-profile {
         display: none;
     }
