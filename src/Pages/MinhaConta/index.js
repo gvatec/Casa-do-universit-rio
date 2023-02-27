@@ -66,7 +66,7 @@ export default function MinhaConta() {
         alert('imagem atualziada com sucesso')
         window.location.reload();
       })
-      .catch((err)=>{
+      .catch((err) => {
         console.log(err)
       })
 
@@ -74,15 +74,16 @@ export default function MinhaConta() {
 
   async function updateprofile() {
 
-    const formdata = new FormData();
-    formdata.append("name", nome == "" ? data.map((item) => item.name)[0] : nome);
-    formdata.append("email", email == "" ? data.map((item) => item.email)[0] : email);
-    formdata.append("telefone", telefone == "" ? data.map((item) => item.telefone)[0] : telefone);
-    formdata.append("nomemae", nomemae == "" ? data.map((item) => item.nomemae)[0] : nomemae);
-    formdata.append("datanascimento", datanascimento == "" ? data.map((item) => item.datanascimento)[0] : datanascimento);
-    formdata.append("rg", rg == "" ? data.map((item) => item.rg)[0] : rg);
-    formdata.append("cpf", cpf == "" ? data.map((item) => item.cpf)[0] : cpf);
-    formdata.append("cep", cep == "" ? data.map((item) => item.cep)[0] : cep);
+    const formdata = {
+      name: nome == "" ? data.map((item) => item.name)[0] : nome,
+      email: email == "" ? data.map((item) => item.email)[0] : email,
+      telefone: telefone == "" ? data.map((item) => item.telefone)[0] : telefone,
+      nomemae: nomemae == "" ? data.map((item) => item.nomemae)[0] : nomemae,
+      datanascimento: datanascimento == "" ? data.map((item) => item.datanascimento)[0] : datanascimento,
+      rg: rg == "" ? data.map((item) => item.rg)[0] : rg,
+      cpf: cpf == "" ? data.map((item) => item.cpf)[0] : cpf,
+      cep: cep == "" ? data.map((item) => item.cep)[0] : cep,
+    }
 
     await api
       .put(`/users/${data.map((item) => item.id)[0]}`, formdata)
@@ -99,10 +100,10 @@ export default function MinhaConta() {
           cep: value.data.cep,
           urlfoto: data.map((item) => item.urlfoto)[0],
         };
-        //console.log(value)
+        //  console.log(value)
         localStorage.setItem("sessionCasaUniversitarioLogin", JSON.stringify(dateUser));
         alert("atualizado com sucesso");
-       // window.location.reload();
+        // window.location.reload();
       })
       .catch((err) => {
         console.log(err);
@@ -145,7 +146,7 @@ export default function MinhaConta() {
             </div>
             <div className="input-label">
               <label>Data de Nascimento</label>
-              <input onChange={(e) => setDatanascimento(e.target.value)} type="date"></input>
+              <input value={datanascimento} onChange={(e) => setDatanascimento(e.target.value)} type="date"></input>
             </div>
           </div>
           <div className="box-input-label">
