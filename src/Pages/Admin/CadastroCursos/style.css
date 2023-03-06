@@ -1,0 +1,8 @@
+.container-cad-cursos{
+    width: 100%;
+    display: flex;
+}
+.container-form-cad-cursos{
+    width: 100%;
+    height: 100vh;
+}

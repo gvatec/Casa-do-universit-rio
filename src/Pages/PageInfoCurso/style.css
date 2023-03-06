@@ -14,7 +14,6 @@
 .cursoDetailBox {
     width: 80%;
     display: flex;
-    flex-direction: column;
     margin-top: 3rem;
     gap: 20px;
     position: relative;
@@ -23,7 +22,7 @@
 .cursoDetailBox h2 {
     font-weight: 600;
     font-size: 35px;
-    width: 50%;
+    width: 90%;
 }
 
 .cursoDetailBox img {
@@ -35,13 +34,22 @@
     height: 450px;
     background-color: #fff;
     border: 1px solid silver;
-    position: absolute;
-    right: 0px;
     border-radius: 10px;
     padding: 10px;
     display: flex;
     flex-direction: column;
-   
+
+}
+
+.box-details-matricula {
+    width: 30%;
+}
+
+.box-details-curso {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .cardBoxDetails p {
@@ -90,9 +98,31 @@
     border-radius: 10px;
 }
 
-.Box-info-details-curso{
-    width: 60%;
+.Box-info-details-curso {
+    width: 90%;
     border: 1px solid silver;
     border-radius: 10px;
     padding: 15px;
+}
+
+@media(max-width:500px) {
+    .cursoDetailBox {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .box-details-curso{
+        width: 100%;
+        align-items: center;
+    }
+    .box-details-matricula{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .cursoDetailBox h2{
+        font-size: 18px;
+        text-align: center;
+    }
 }

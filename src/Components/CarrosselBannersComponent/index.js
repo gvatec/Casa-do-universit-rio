@@ -36,7 +36,7 @@ const CarrosselBannersComponent = (props) => {
 
   return (
     < div className="slide-container" >
-      <Slide infinite={true} arrows={true} duration={3000}>
+      <Slide autoplay infinite={true} arrows={true} duration={3000}>
         {Banners.map((slideImage, index) => (
           < div className="slideBox" key={index} >
             < div style={{ ...divStyle, 'backgroundImage': `url( ${slideImage.banner} )` }}>

@@ -18,7 +18,7 @@ export default function Footer() {
         <div className="box-btns-nav-footer">
           <h4>Bolsas</h4>
           <a>Cursos</a>
-          <a>Intituições</a>
+          <a>Instituições</a>
           <a>Cursos livres</a>
           <a>Categorias</a>
         </div>
@@ -33,7 +33,7 @@ export default function Footer() {
       </div>
 
       <div className="copy">
-        <h4>Todos Direitos reservados á Casa do Universitário</h4>
+        <h4>©️2023 Todos Direitos reservados á Casa do Universitário</h4>
         <p onClick={() => (window.location.href = "https://tecwebcod.netlify.app/")}>
           Desenvolvido por TecWebCod
         </p>

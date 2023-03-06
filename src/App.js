@@ -3,16 +3,14 @@ import "./App.css";
 import RouterApp from "./services/routes";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useEffect } from "react";
 import api from "./services/api";
-import { useSelector } from "react-redux";
 import { useState } from "react";
 
 function App() {
   const [display, setDisplay] = useState('')
   const idsessao = JSON.parse(localStorage.getItem("sessionCasaUniversitarioLogin"))
 
-  let timer = 10
+  let timer = 60 *30
   let interval
 
 
@@ -37,15 +35,7 @@ function App() {
   }
 
 
-
-
- 
-
-
-
-
-
-  return (
+ return (
     <div className="App">
       <h1>{display}</h1>
       <BrowserRouter>

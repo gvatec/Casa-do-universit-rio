@@ -28,43 +28,47 @@ export default function PageInfoCurso() {
                     curso.map(item => {
                         return (
                             <div key={item.id} className='cursoDetailBox'>
-                                <UrlmapComponent urlname={window.location.pathname} url={window.location.pathname}></UrlmapComponent>
-                                <img src={item.logo} alt='logo Universidade'></img>
-                                <h2>{item.title} na faculdade {item.instituicao}</h2>
-                                <div style={{ display: "flex", gap: "5px" }}>
-                                    <strong style={{ fontWeight: "600" }}>Tipo:</strong>
-                                    <p>{item.tipo}</p>
-                                </div>
-                                <div style={{ display: "flex", gap: "5px" }}>
-                                    <strong style={{ fontWeight: "600" }}>Duração:</strong>
-                                    <p>{item.duracao}</p>
-                                </div>
-                                <div className="Box-info-details-curso">
-                                    <strong style={{ fontWeight: "600" }}>Sobre:</strong>
-                                    <p>{item.sobre}</p>
-
-                                </div>
-
-                                <div className="cardBoxDetails">
-                                    <div style={{ width: "100%", display: 'flex', justifyContent: "center", marginBottom: "1rem" }}><img src={item.logo} alt='logo instituição'></img></div>
-                                    <p>Escolha a Modalidade</p>
-                                    <div className="modalidadebox">
-                                        {item.modalidade.map(mod => {
-                                            return (
-                                                <>
-                                                    <button className="btnMod">{mod}</button>
-                                                </>
-                                            )
-                                        })}
+                                <div className="box-details-curso">
+                                    <UrlmapComponent urlname={window.location.pathname} url={window.location.pathname}></UrlmapComponent>
+                                    <img src={item.logo} alt='logo Universidade'></img>
+                                    <h2>{item.title} na faculdade {item.instituicao}</h2>
+                                    <div style={{ display: "flex", gap: "5px" }}>
+                                        <strong style={{ fontWeight: "600" }}>Tipo:</strong>
+                                        <p>{item.tipo}</p>
                                     </div>
-                                    <p style={{ fontWeight: "600", marginTop: "2rem", fontSize: "20px" }}>{item.localidades}/sp</p>
-                                    <hr style={{ border: "1px solid silver", marginTop: "10px", marginBottom: "1rem" }}></hr>
+                                    <div style={{ display: "flex", gap: "5px" }}>
+                                        <strong style={{ fontWeight: "600" }}>Duração:</strong>
+                                        <p>{item.duracao}</p>
+                                    </div>
+                                    <div className="Box-info-details-curso">
+                                        <strong style={{ fontWeight: "600" }}>Sobre:</strong>
+                                        <p>{item.sobre}</p>
 
-                                    <h2>{Number(item.mensalidade).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</h2>
-                                    <br></br>
-                                    <h2>Ultimas vagas!</h2>
+                                    </div>
+                                </div>
 
-                                    <button id="btnGarantirbolsa">Garantir esta bolsa</button>
+                                <div className="box-details-matricula">
+                                    <div className="cardBoxDetails">
+                                        <div style={{ width: "100%", display: 'flex', justifyContent: "center", marginBottom: "1rem" }}><img src={item.logo} alt='logo instituição'></img></div>
+                                        <p>Escolha a Modalidade</p>
+                                        <div className="modalidadebox">
+                                            {item.modalidade.map(mod => {
+                                                return (
+                                                    <>
+                                                        <button className="btnMod">{mod}</button>
+                                                    </>
+                                                )
+                                            })}
+                                        </div>
+                                        <p style={{ fontWeight: "600", marginTop: "2rem", fontSize: "20px" }}>{item.localidades}/sp</p>
+                                        <hr style={{ border: "1px solid silver", marginTop: "10px", marginBottom: "1rem" }}></hr>
+
+                                        <h2>{Number(item.mensalidade).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</h2>
+                                        <br></br>
+                                        <h2>Ultimas vagas!</h2>
+
+                                        <button id="btnGarantirbolsa">Garantir esta bolsa</button>
+                                    </div>
                                 </div>
                             </div>
                         )

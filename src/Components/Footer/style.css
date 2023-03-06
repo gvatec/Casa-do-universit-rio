@@ -3,8 +3,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #4345cf;
-    padding-top: 2rem;
+    background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, #4F72B2 0.01%, #1D4A9C 100%);
+        padding-top: 2rem;
 }
 
 .redes-sociais-footer {
